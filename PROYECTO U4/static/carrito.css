@@ -1,0 +1,204 @@
+/* Estilos para el carrito de compras */
+.carrito-icono {
+    position: relative;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.carrito-icono i {
+    font-size: 24px;
+    color: white;
+}
+
+.carrito-contador {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #8A2BE2;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.carrito-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: #2A2A2A;
+    z-index: 1001;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.carrito-modal.activo {
+    transform: translateX(0);
+}
+
+.carrito-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.carrito-header h3 {
+    margin: 0;
+    color: white;
+}
+
+.cerrar-carrito {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.carrito-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.carrito-item {
+    display: flex;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.carrito-item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.carrito-item-detalles {
+    flex: 1;
+}
+
+.carrito-item-titulo {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: white;
+}
+
+.carrito-item-precio {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #00FFFF;
+}
+
+.carrito-item-cantidad {
+    display: flex;
+    align-items: center;
+}
+
+.cantidad-btn {
+    background-color: #333;
+    border: none;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.cantidad-input {
+    width: 40px;
+    text-align: center;
+    margin: 0 5px;
+    background-color: #1A1A1A;
+    border: 1px solid #333;
+    color: white;
+    border-radius: 3px;
+}
+
+.eliminar-item {
+    background: none;
+    border: none;
+    color: #ff6b6b;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.carrito-footer {
+    padding: 20px;
+    border-top: 1px solid #333;
+}
+
+.carrito-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: white;
+}
+
+.carrito-total span:last-child {
+    font-weight: bold;
+    color: #00FFFF;
+}
+
+.boton-checkout {
+    width: 100%;
+    padding: 12px;
+    background-color: #8A2BE2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.boton-checkout:hover {
+    background-color: #7B1FA2;
+}
+
+.carrito-vacio {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+}
+
+.overlay.activo {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .carrito-modal {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carrito-modal {
+        max-width: 100%;
+    }
+}

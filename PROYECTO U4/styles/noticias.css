@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    border-radius: 10px 0 0 10px;
+    background-color: #1A1A1A !important;
+    color: white !important;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.page-wrapper {
+    flex: 1; /* Esta es la clave: hace que page-wrapper ocupe todo el espacio disponible */
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+.footer {
+    background-color: #2A2A2A;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+/* Estilos personalizados para el header */
+header .navbar {
+    background-color: #2A2A2A !important;
+    border-bottom: 2px solid #8A2BE2;
+    padding: 1rem 2rem;
+    height: 80px;
+}
+
+header .navbar-brand {
+    color: white !important;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+header .navbar-brand:hover, 
+header .navbar-brand:focus {
+    color: #00FFFF !important;
+}
+
+header .navbar-nav .nav-link {
+    color: white !important;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+    margin: 0 0.5rem;
+}
+
+header .navbar-nav .nav-link:hover, 
+header .navbar-nav .nav-link:focus {
+    background-color: #8A2BE2;
+    color: white !important;
+}
+
+/* Ajustes para navbar toggler */
+header .navbar-toggler {
+    border-color: #8A2BE2 !important;
+    background-color: rgba(138, 43, 226, 0.2) !important;
+}
+
+header .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Buscador responsive */
+.search-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: auto;
+    max-width: 600px;
+    z-index: 10;
+}
+
+.search-form {
+    position: relative;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 45px 12px 20px;
+    border: 2px solid #8A2BE2;
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #00FFFF;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Animaciones */
+.search-input:focus {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+}
+
+.search-form:hover .search-input,
+.search-input:focus {
+    border-color: #00FFFF;
+}
+
+.search-button:hover {
+    color: #8A2BE2;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Efecto de expansión */
+.search-form:focus-within {
+    width: 400px;
+}
+
+
+/* Contenedor de noticias */
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.news-card {
+    flex: 1 1 300px;
+    max-width: 350px;
+    min-width: 300px;
+    background: #2A2A2A;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px #8A2BE2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.7);
+}
+
+.news-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.news-title {
+    font-size: 1.2em;
+    color: #ffff;
+    margin-bottom: 10px;
+}
+
+.news-excerpt {
+    color: #c2c2c2;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.news-date {
+    color: #b8b6b6;
+    font-size: 0.8em;
+    margin-top: 15px;
+}
+
+.section-title {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+
+
+/* Media queries para responsividad */
+@media (max-width: 1200px) {
+    .gaming-header .navbar {
+        height: auto !important;
+    }
+    
+    .page-wrapper {
+        flex-direction: column;
+    }
+    
+    .ad-sidebar {
+        width: 100%;
+        position: static;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .ad-container {
+        width: 300px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .search-container {
+        position: static;
+        margin-right: 10px;
+    }
+    
+    .search-form {
+        width: 200px;
+    }
+    
+    .search-input {
+        padding: 8px 40px 8px 15px;
+        font-size: 14px;
+    }
+    
+    #navbarContent {
+        background-color: #2A2A2A !important;
+        border-radius: 0 0 10px 10px !important;
+        padding: 10px !important;
+        z-index: 1000 !important;
+        margin-top: 10px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-form {
+        width: 250px;
+    }
+    
+    .search-form:focus-within {
+        width: 300px;
+    }
+    
+    .main-content {
+        margin: 0;
+    }
+    
+    .news-card {
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .search-form {
+        width: 160px;
+    }
+    
+    .search-input {
+        padding: 6px 30px 6px 12px;
+        font-size: 12px;
+    }
+    
+    .search-button {
+        padding: 5px;
+    }
+    
+    .gaming-brand {
+        font-size: 20px !important;
+    }
+    
+    .page-wrapper {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-card {
+        min-width: 100%;
+    }
+    
+    .news-image {
+        height: 180px;
+    }
+}
+
+/* Para dispositivos muy pequeños */
+@media (max-width: 320px) {
+    .gaming-link {
+        padding: 0.25rem 0.5rem !important;
+        font-size: 0.8rem !important;
+    }
+    
+    .search-form {
+        width: 180px;
+    }
+    
+    .search-form:focus-within {
+        width: 220px;
+    }
+}

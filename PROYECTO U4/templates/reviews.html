@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamingZA Reviews</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Ruta correcta para el CSS en Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='reviews.css') }}">
+</head>
+<body>
+    <header class="gaming-header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand gaming-brand" href="#">GamingZA</a>
+
+                <div class="d-flex align-items-center order-lg-3">
+                    <div class="search-container">
+                        <form class="search-form">
+                            <input type="text" class="search-input" placeholder="Buscar...">
+                            <button type="submit" class="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse order-lg-2" id="navbarContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('index') }}">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link active" href="{{ url_for('reviews') }}">Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('noticias') }}">Noticias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('guias') }}">Guías</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('tienda') }}">Merchandising</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('contactos') }}">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenedor de Reviews -->
+    <main class="reviews-container">
+        <h2 class="section-title">Últimas Reviews</h2>
+
+        <div class="review-card">
+            <img src="{{ url_for('static', filename='img/Elden Ring guia.jpg') }}" alt="Elden Ring Review" class="review-image">
+            <div class="review-content">
+                <h3>Elden Ring: Shadow of the Erdtree</h3>
+                <p>Una expansión increíble que redefine la experiencia Souls.</p>
+                <a href="#" class="read-more">Leer más</a>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <img src="{{ url_for('static', filename='img/gta-vi-protaswdf.jpg') }}" alt="GTA 6 Review" class="review-image">
+            <div class="review-content">
+                <h3>Grand Theft Auto VI</h3>
+                <p>Rockstar vuelve a revolucionar el mundo abierto con GTA 6.</p>
+                <a href="#" class="read-more">Leer más</a>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <img src="{{ url_for('static', filename='img/spiderman 2.jpg') }}" alt="Spider-Man 2 Review" class="review-image">
+            <div class="review-content">
+                <h3>Marvel's Spider-Man 2</h3>
+                <p>Una secuela que supera las expectativas con su jugabilidad fluida.</p>
+                <a href="#" class="read-more">Leer más</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Redes Sociales -->
+    <aside class="sidebar">
+        <p>Redes Sociales</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </aside>
+
+    <footer class="footer">
+        <p>© 2025 GamingZA - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle con Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

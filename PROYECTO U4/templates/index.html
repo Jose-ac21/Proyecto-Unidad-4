@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamingZA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="gaming-header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand gaming-brand" href="#">GamingZA</a>
+                
+                <!-- Mostrar el nombre del usuario si está autenticado -->
+                {% if logged_in %}
+                    <span class="navbar-text ms-3 text-light">Bienvenido, {{ username }}</span>
+                {% endif %}
+
+                <div class="d-flex align-items-center order-lg-3">
+                    {% if logged_in %}
+                        {% if session['role'] == 'admin' %}
+                            <!-- Botón para registrar usuarios si el usuario es administrador -->
+                            <a href="{{ url_for('admin_register') }}" class="btn btn-success me-2">
+                                <i class="fas fa-user-plus"></i> Registrar Usuario
+                            </a>
+                        {% endif %}
+                        <!-- Botón LOGOUT cuando el usuario está autenticado -->
+                        <a href="{{ url_for('logout') }}" class="btn btn-danger me-2">
+                            <i class="fas fa-sign-out-alt"></i> LOGOUT
+                        </a>
+                    {% else %}
+                        <!-- Botón LOGIN/REGISTER cuando el usuario no está autenticado -->
+                        <a href="{{ url_for('login') }}" class="btn btn-primary me-2">
+                            <i class="fas fa-gamepad"></i> LOGIN/REGISTER
+                        </a>
+                    {% endif %}
+                    <div class="search-container">
+                        <form class="search-form">
+                            <input type="text" class="search-input" placeholder="Buscar...">
+                            <button type="submit" class="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse order-lg-2" id="navbarContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link active" href="{{ url_for('index') }}">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('reviews') }}">Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('noticias') }}">Noticias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('guias') }}">Guías</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('tienda') }}">Merchandising</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('contactos') }}">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Carrusel de Imágenes -->
+    <div class="carousel-container">
+        <button class="carousel-arrow prev">←</button>
+        <button class="carousel-arrow next">→</button>
+        <div class="carousel">
+            <div class="carousel-slide">
+                <img src="{{ url_for('static', filename='img/the last of us 2.jpg') }}" alt="The Last of Us 2">
+                <div class="slide-content">
+                    <h2>The Last of Us Part III - Análisis Completo</h2>
+                    <p>Descubre todos los detalles del juego más esperado del año...</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="{{ url_for('static', filename='img/Los Juegos Mas Esperados del 2025.jpg') }}" alt="Los Juegos 2025">
+                <div class="slide-content">
+                    <h2>Los Juegos Más Esperados del 2025</h2>
+                    <p>Los mejores RPGs que no te puedes perder este año...</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="{{ url_for('static', filename='img/Elden Ring Nightreign.jpg') }}" alt="Elden Ring">
+                <div class="slide-content">
+                    <h2>Elden Ring Nightreign</h2>
+                    <p>Todos los secretos y consejos para dominar el juego...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Post-Cards -->
+    <div class="section-title">
+        <h2>LO MÁS DESTACADO ESTA SEMANA</h2>
+    </div>
+
+    <main class="featured-posts">
+        <article class="post-card">
+            <div class="post-image">
+                <img src="{{ url_for('static', filename='img/pokemon-legends-z-a-169-es.png') }}" alt="POKEMON ZA">
+            </div>
+            <h3>Leyendas Pokémon: Z-A</h3>
+            <p>La historia de Leyendas Pokémon: Z-A transcurre en Ciudad Luminalia, donde se está llevando a cabo un plan de desarrollo urbanístico que convertirá la ciudad en un lugar perfecto para humanos y Pokémon.</p>
+        </article>
+        <article class="post-card">
+            <div class="post-image">
+                <img src="{{ url_for('static', filename='img/gta-vi-protaswdf.jpg') }}" alt="GTA 6">
+            </div>
+            <h3>Grand Theft Auto VI</h3>
+            <p>GTA 6 es un videojuego de acción en mundo abierto que busca dar continuidad una década más a la exitosa saga de Rockstar Games.</p>
+        </article>
+        <article class="post-card">
+            <div class="post-image">
+                <img src="{{ url_for('static', filename='img/images.jpg') }}" alt="Warner Bros">
+            </div>
+            <h3>Warner Bros. cierra estudios emblemáticos</h3>
+            <p>Warner Bros. Interactive enfrenta fracasos como Multiversus y Suicide Squad: Kill the Justice League.</p>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 GamingZA - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

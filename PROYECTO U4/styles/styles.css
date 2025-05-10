@@ -1,0 +1,558 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    border-radius: 10px 0 0 10px;
+    background-color: #1A1A1A !important;
+    color: white !important;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Estilos para el navbar de Bootstrap con mayor especificidad */
+header .navbar {
+    background-color: #2A2A2A !important;
+    border-bottom: 2px solid #8A2BE2;
+    padding: 1rem 2rem;
+    height: 80px;
+}
+
+header .navbar-brand {
+    color: white !important;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+header .navbar-brand:hover, 
+header .navbar-brand:focus {
+    color: #00FFFF !important;
+}
+
+header .navbar-nav .nav-link {
+    color: white !important;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+    margin: 0 0.5rem;
+}
+
+header .navbar-nav .nav-link:hover, 
+header .navbar-nav .nav-link:focus {
+    background-color: #8A2BE2;
+    color: white !important;
+}
+
+/* Ajustes para navbar toggler */
+header .navbar-toggler {
+    border-color: #8A2BE2 !important;
+    background-color: rgba(138, 43, 226, 0.2) !important;
+}
+
+header .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Buscador responsive */
+.search-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: auto;
+    max-width: 600px;
+    z-index: 10;
+}
+
+.search-form {
+    position: relative;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 45px 12px 20px;
+    border: 2px solid #8A2BE2;
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #00FFFF;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Animaciones */
+.search-input:focus {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+}
+
+.search-form:hover .search-input,
+.search-input:focus {
+    border-color: #00FFFF;
+}
+
+.search-button:hover {
+    color: #8A2BE2;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Efecto de expansión */
+.search-form:focus-within {
+    width: 400px;
+}
+
+/* Asegurando que el menú desplegable tenga fondo oscuro */
+header .navbar-collapse {
+    background-color: #2A2A2A !important;
+}
+
+/* Estilos del Carrusel */
+.carousel-container {
+    position:relative;
+    width: calc(100% - 2rem);
+    max-width: 1700px;
+    height: auto;
+    margin: 2rem auto;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid #00FFFF;
+    
+}
+
+.carousel {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+}
+
+.carousel-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    border: none;
+}
+
+.carousel-dot.active {
+    background: #8A2BE2;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-arrow:hover {
+    background: rgba(138,43,226,0.8);
+}
+
+.carousel-arrow.prev {
+    left: 10px;
+}
+
+.carousel-arrow.next {
+    right: 10px;
+}
+
+/* Estilos de los Posts */
+
+.section-title h2 {
+  text-align: center;
+    margin-bottom: 1.5rem;
+    color: #00FFFF;
+    font-size: 1.5rem;
+  
+}
+
+.featured-posts {
+    position: flex;
+    width: 100%;
+    max-width: 1400px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background-color: rgba(26, 26, 26, 0.95);
+    border-radius: 10px;
+    border: 1px solid #333;
+    z-index: 5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.post-card {
+    background-color: #2A2A2A;
+    padding: 1rem;
+    border-radius: 10px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+    width: 100%;
+    align-items: center;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+}
+
+.post-image {
+    background-color: #3A3A3A;
+    height: 200px;
+    border-radius: 5px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.video-section{
+    max-width: 900px;
+    margin: 2rem auto;
+    position: flex;
+    padding:  2rem;
+    background-color: rgba(26, 26, 26, 0.95);
+    border-radius: 10px;
+    border: 1px solid #333;
+    z-index: 5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.video-section h2{
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #00FFFF;
+    font-size: 2rem;
+    padding-top: 0.5rem;
+    
+}
+
+.video-container {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #8A2BE2;
+    background-color: #2A2A2A;
+}
+
+.video-container video {
+    display: block;
+    width: 100%;
+}
+
+.video-description {
+    background-color: #2A2A2A;
+    padding: 1.5rem;
+    border-radius: 0 0 10px 10px;
+    margin-top: -10px;
+}
+
+.video-description h3 {
+    color: #00FFFF;
+    margin-bottom: 1rem;
+}
+
+.video-description p {
+    color: white;
+    line-height: 1.5;
+}
+
+
+/* Estilos de la Barra Lateral */
+.sidebar {
+    position: fixed;
+    right: -140px; /* Oculta la mayor parte de la barra lateral */
+    top: 30%;
+    transform: translateY(-20%);
+    background-color: #2A2A2A;
+    padding: 1rem;
+    border-radius: 20px 0 0 20px;
+    z-index: 100;
+    transition: right 0.3s ease; /* Transición suave para el deslizamiento */
+    width: 180px; /* Ancho fijo */
+}
+.sidebar p {
+    font-size: 20px;
+}
+
+.sidebar:hover {
+    right: 0; /* Se muestra completamente al hacer hover */
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 30px;
+}
+.social-icons a {
+    color: #00FFFF;
+}
+
+
+
+
+
+/* Estilos del Footer */
+.footer {
+    background-color: #2A2A2A;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+}
+/* Media queries para dispositivos móviles */
+@media (max-width: 1200px) {
+    /* En pantallas medianas y pequeñas, todo vuelve al flujo normal */
+    .animes-section {
+        position: static;
+        width: 100%;
+        max-width: 1400px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+        top:auto;
+    }
+    
+    .animes-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    .carousel-container, .featured-posts, .section-title {
+        margin-left: 0;
+        width: calc(100% - 4rem);
+    }
+    
+    .anime-card img {
+        height: 200px;
+    }
+    
+    .featured-posts, .section-title {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .section-title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 991.98px) {
+    header .navbar {
+        height: auto;
+    }
+    
+    .search-container {
+        position: static;
+        margin-right: 10px;
+    }
+    
+    .search-form {
+        width: 200px;
+    }
+    
+    .search-input {
+        padding: 8px 40px 8px 15px;
+        font-size: 14px;
+    }
+    
+    header .navbar-collapse {
+        background-color: #2A2A2A !important;
+        border-radius: 0 0 10px 10px;
+        padding: 10px;
+        z-index: 1000;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-form {
+        width: 250px;
+    }
+    
+    .search-form:focus-within {
+        width: 300px;
+    }
+    
+    .carousel-container {
+        width: calc(100% - 2rem);
+        margin: 1rem auto;
+    }
+    
+    .featured-posts {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .slide-content {
+        padding: 1rem;
+    }
+    
+    .carousel-arrow {
+        padding: 0.5rem;
+    }
+    
+    .sidebar {
+        display: none; /* Ocultar en móviles o convertir en menú desplegable */
+    }
+}
+
+@media (max-width: 576px) {
+    .search-form {
+        width: 160px;
+    }
+    
+    .search-input {
+        padding: 6px 30px 6px 12px;
+        font-size: 12px;
+    }
+    
+    .search-button {
+        padding: 5px;
+    }
+    
+    header .navbar-brand {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .animes-section {
+        padding: 0 1rem;
+    }
+    
+    .animes-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .anime-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .carousel-container {
+        width: calc(100% - 1rem);
+        margin: 0.5rem auto;
+    }
+    
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .post-card {
+        min-height: 250px;
+    }
+    
+    .post-image {
+        height: 150px;
+    }
+    
+    .featured-posts {
+        padding: 0.5rem;
+    }
+}
+
+/* Para dispositivos muy pequeños */
+@media (max-width: 320px) {
+    header .navbar-nav .nav-link {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .search-form {
+        width: 180px;
+    }
+    
+    .search-form:focus-within {
+        width: 220px;
+    }
+}
+
+/* Para orientación landscape en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .carousel-container {
+        aspect-ratio: 21/9;
+    }
+    
+    header .navbar {
+        padding: 0.5rem 1rem;
+    }
+}

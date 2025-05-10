@@ -1,0 +1,293 @@
+:root {
+    /* Tema oscuro (por defecto) */
+    --color-fondo: #222;
+    --color-calculadora: #333;
+    --color-pantalla: #444;
+    --color-boton: #555;
+    --color-texto-boton: white;
+    --color-hover-boton: #666;
+    --color-operador: #ff9500;
+    --color-hover-operador: #ffb143;
+    --color-igual: #2196F3;
+    --color-hover-igual: #0b7dda;
+    --color-texto: white;
+    --color-historial: #aaa;
+}
+
+/* Tema claro */
+.tema-claro {
+    --color-fondo: #f5f5f5;
+    --color-calculadora: #fff;
+    --color-pantalla: #eaeaea;
+    --color-boton: #e0e0e0;
+    --color-texto-boton: #333;
+    --color-hover-boton: #d4d4d4;
+    --color-operador: #ff9500;
+    --color-hover-operador: #ffb143;
+    --color-igual: #2196F3;
+    --color-hover-igual: #0b7dda;
+    --color-texto: #333;
+    --color-historial: #777;
+}
+
+/* Tema azul */
+.tema-azul {
+    --color-fondo: #1a237e;
+    --color-calculadora: #283593;
+    --color-pantalla: #303f9f;
+    --color-boton: #3949ab;
+    --color-texto-boton: white;
+    --color-hover-boton: #5c6bc0;
+    --color-operador: #ff9800;
+    --color-hover-operador: #ffb74d;
+    --color-igual: #00bcd4;
+    --color-hover-igual: #4dd0e1;
+    --color-texto: white;
+    --color-historial: #c5cae9;
+}
+
+/* Tema morado */
+.tema-morado {
+    --color-fondo: #4a148c;
+    --color-calculadora: #6a1b9a;
+    --color-pantalla: #7b1fa2;
+    --color-boton: #8e24aa;
+    --color-texto-boton: white;
+    --color-hover-boton: #ab47bc;
+    --color-operador: #ffeb3b;
+    --color-hover-operador: #fff176;
+    --color-igual: #69f0ae;
+    --color-hover-igual: #b9f6ca;
+    --color-texto: white;
+    --color-historial: #e1bee7;
+}
+
+.boton-calculadora {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.boton-calculadora:hover {
+    transform: scale(1.1);
+    background-color: #1976D2;
+}
+
+.modal-calculadora {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.calculadora {
+    background-color: var(--color-calculadora);
+    border-radius: 12px;
+    width: 320px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.configuracion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.contenedor-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: var(--color-texto);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.deslizador {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.deslizador:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+}
+
+.deslizador.redondo {
+    border-radius: 20px;
+}
+
+.deslizador.redondo:before {
+    border-radius: 50%;
+}
+
+input:checked + .deslizador {
+    background-color: var(--color-igual);
+}
+
+input:checked + .deslizador:before {
+    transform: translateX(20px);
+}
+
+.selector-tema select {
+    padding: 4px 8px;
+    border-radius: 5px;
+    background-color: var(--color-boton);
+    color: var(--color-texto-boton);
+    border: none;
+    cursor: pointer;
+}
+
+.boton-cerrar {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    background: var(--color-operador);
+    border: none;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.boton-cerrar:hover {
+    background-color: var(--color-hover-operador);
+    transform: scale(1.1);
+}
+
+.contenedor-pantalla {
+    background-color: var(--color-pantalla);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.historial {
+    color: var(--color-historial);
+    font-size: 14px;
+    padding: 5px 10px;
+    height: 25px;
+    text-align: right;
+}
+
+.pantalla {
+    color: var(--color-texto);
+    font-size: 28px;
+    padding: 10px;
+    text-align: right;
+    min-height: 50px;
+    word-wrap: break-word;
+}
+
+.botones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.botones-cientificos {
+    display: none;
+    grid-column: span 4;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    font-size: 18px;
+    padding: 15px 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--color-boton);
+    color: var(--color-texto-boton);
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--color-hover-boton);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.operador {
+    background-color: var(--color-operador);
+    color: white;
+}
+
+.operador:hover {
+    background-color: var(--color-hover-operador);
+}
+
+.igual {
+    background-color: var(--color-igual);
+    color: white;
+    grid-column: span 2;
+}
+
+.igual:hover {
+    background-color: var(--color-hover-igual);
+}
+
+.boton-cientifico {
+    font-size: 15px;
+}
+
+.borrar {
+    font-size: 20px;
+}

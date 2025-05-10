@@ -1,0 +1,24 @@
+Para que el código funcione debes de hacer lo siguente:
+
+1. En la terminal de Visual Studio Crea un entorno virtual:
+
+python -m venv env
+
+2. Activa el entorno virtual:
+
+.env\Scripts\actívate
+
+3. Ahora instalaraas las dependencias:
+
+pip install -r requirements.txt
+
+Ahora para conectar la base de datos descarga la que te mande con las consultas y conectala asi:
+
+En el archivo config.py coloca los datos de tu base de datos
+
+class Config:
+    SECRET_KEY = 'clave_secreta'
+    MYSQL_HOST = 'localhost'
+    MYSQL_USER = 'root'
+    MYSQL_PASSWORD = 'tu_contraseña'
+    MYSQL_DB = 'gamingza'

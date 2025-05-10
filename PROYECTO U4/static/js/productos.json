@@ -1,0 +1,53 @@
+{
+    "productos": [
+      {
+        "id": 1,
+        "nombre": "Camiseta Logo Central",
+        "precio": 249.99,
+        "descripcion": "Camiseta de algodón 100% de alta calidad",
+        "imagen": "/img/MERCH/1.jpg"
+      },
+      {
+        "id": 2,
+        "nombre": "Camiseta Logo Pecho Izq",
+        "precio": 249.99,
+        "descripcion": "Logo pequeño en la parte superior",
+        "imagen": "/img/MERCH/2.jpg"
+      },
+      {
+        "id": 3,
+        "nombre": "Camiseta Logo Pecho Der",
+        "precio": 249.99,
+        "descripcion": "Logo pequeño en la parte superior",
+        "imagen": "/img/MERCH/3.jpg"
+      },
+      {
+        "id": 4,
+        "nombre": "Camiseta GamingZA Moderna",
+        "precio": 249.99,
+        "descripcion": "Texto \"GamingZA\" en estilo moderno",
+        "imagen": "/img/MERCH/4.jpg"
+      },
+      {
+        "id": 5,
+        "nombre": "Gorra Con Logo Y GamingZA",
+        "precio": 449.99,
+        "descripcion": "Gorra de alta calidad diseñada para gamers",
+        "imagen": "/img/MERCH/7.jpg"
+      },
+      {
+        "id": 6,
+        "nombre": "Gorra Con Logo",
+        "precio": 449.99,
+        "descripcion": "Gorra de alta calidad diseñada para gamers",
+        "imagen": "/img/MERCH/8.jpg"
+      },
+      {
+        "id": 7,
+        "nombre": "Termo GamingZA",
+        "precio": 199.99,
+        "descripcion": "Termo perfecto para tu bebida preferida",
+        "imagen": "/img/MERCH/9.jpg"
+      }
+    ]
+  }

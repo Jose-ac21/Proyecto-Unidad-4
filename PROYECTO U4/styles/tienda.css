@@ -1,0 +1,522 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: #1A1A1A !important;
+    color: white !important;
+}
+
+/* Estilos para el navbar de Bootstrap con mayor especificidad */
+header .navbar {
+    background-color: #2A2A2A !important;
+
+    padding: 2% 0% 0% 15%;
+    
+}
+
+header .navbar {
+    background-color: #2A2A2A !important;
+    border-bottom: 2px solid #8A2BE2;
+    padding: 1rem 2rem;
+    height: 80px;
+}
+
+header .navbar-brand:hover, 
+header .navbar-brand:focus {
+    color: #00FFFF !important;
+}
+
+header .navbar-nav .nav-link {
+    color: white !important;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+    margin: 0 0.5rem;
+}
+
+header .navbar-nav .nav-link:hover, 
+header .navbar-nav .nav-link:focus {
+    background-color: #8A2BE2;
+    color: white !important;
+}
+
+/* Ajustes para navbar toggler */
+header .navbar-toggler {
+    border-color: #8A2BE2 !important;
+    background-color: rgba(138, 43, 226, 0.2) !important;
+}
+
+/* Buscador responsive */
+.search-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: auto;
+    max-width: 600px;
+    z-index: 10;
+}
+
+.search-form {
+    position: relative;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 45px 12px 20px;
+    border: 2px solid #8A2BE2;
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #00FFFF;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Animaciones */
+.search-input:focus {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+}
+
+.search-form:hover .search-input,
+.search-input:focus {
+    border-color: #00FFFF;
+}
+
+.search-button:hover {
+    color: #8A2BE2;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Efecto de expansión */
+.search-form:focus-within {
+    width: 400px;
+}
+
+/* Asegurando que el menú desplegable tenga fondo oscuro */
+header .navbar-collapse {
+    background-color: #2A2A2A !important;
+}
+
+
+/* Estilos de la Barra Lateral */
+.sidebar {
+    position: fixed;
+    right: -140px; /* Oculta la mayor parte de la barra lateral */
+    top: 30%;
+    transform: translateY(-20%);
+    background-color: #2A2A2A;
+    padding: 1rem;
+    border-radius: 20px 0 0 20px;
+    z-index: 100;
+    transition: right 0.3s ease; /* Transición suave para el deslizamiento */
+    width: 180px; /* Ancho fijo */
+}
+.sidebar p {
+    font-size: 20px;
+}
+
+.sidebar:hover {
+    right: 0; /* Se muestra completamente al hacer hover */
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 30px;
+}
+.social-icons a {
+    color: #00FFFF;
+}
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.tarjeta-producto {
+    background-color: rgba(26, 26, 26, 0.95);
+    border: 1px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 300px; /* Mantenemos el máximo para escritorio */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.imagen-producto {
+    width: 100%;
+    height: 300px; /* Altura fija */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    display: block;
+}
+
+.info-producto {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.titulo-producto {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.precio-producto {
+    font-size: 1.4rem;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.descripcion-producto {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.boton-comprar {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.boton-comprar:hover {
+    background-color: #2980b9;
+}
+
+.calculadora-flotante {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.calculadora-flotante:hover {
+    transform: scale(1.1);
+    background-color: #1976D2;
+}
+
+/* Estilos para el modal de la calculadora */
+.calculadora-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.close-btn:hover {
+    color: var(--operator-bg);
+}
+
+/* Animación para el modal */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.calculadora-modal {
+    animation: fadeIn 0.3s ease;
+}
+
+
+/* Estilos del Footer */
+.footer {
+    background-color: #2A2A2A;
+    padding: 24px;
+    text-align: center;
+    
+}
+/* Media queries para dispositivos móviles */
+@media (max-width: 1200px) {
+    /* En pantallas medianas y pequeñas, todo vuelve al flujo normal */
+    .animes-section {
+        position: static;
+        width: 100%;
+        max-width: 1400px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+        top:auto;
+    }
+    
+    .animes-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    .carousel-container, .featured-posts, .section-title {
+        margin-left: 0;
+        width: calc(100% - 4rem);
+    }
+    
+    .anime-card img {
+        height: 200px;
+    }
+    
+    .featured-posts, .section-title {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .section-title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 991.98px) {
+    header .navbar {
+        height: auto;
+    }
+    
+    .search-container {
+        position: static;
+        margin-right: 10px;
+    }
+    
+    .search-form {
+        width: 200px;
+    }
+    
+    .search-input {
+        padding: 8px 40px 8px 15px;
+        font-size: 14px;
+    }
+    
+    header .navbar-collapse {
+        background-color: #2A2A2A !important;
+        border-radius: 0 0 10px 10px;
+        padding: 10px;
+        z-index: 1000;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-form {
+        width: 250px;
+    }
+    
+    .search-form:focus-within {
+        width: 300px;
+    }
+    
+    .carousel-container {
+        width: calc(100% - 2rem);
+        margin: 1rem auto;
+    }
+    
+    .featured-posts {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .slide-content {
+        padding: 1rem;
+    }
+    
+    .carousel-arrow {
+        padding: 0.5rem;
+    }
+    
+    .sidebar {
+        display: none; /* Ocultar en móviles o convertir en menú desplegable */
+    }
+}
+
+@media (max-width: 576px) {
+    .search-form {
+        width: 160px;
+    }
+    
+    .search-input {
+        padding: 6px 30px 6px 12px;
+        font-size: 12px;
+    }
+    
+    .search-button {
+        padding: 5px;
+    }
+    
+    header .navbar-brand {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .animes-section {
+        padding: 0 1rem;
+    }
+    
+    .animes-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .anime-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .carousel-container {
+        width: calc(100% - 1rem);
+        margin: 0.5rem auto;
+    }
+    
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .post-card {
+        min-height: 250px;
+    }
+    
+    .post-image {
+        height: 150px;
+    }
+    
+    .featured-posts {
+        padding: 0.5rem;
+    }
+}
+
+/* Para dispositivos muy pequeños */
+@media (max-width: 320px) {
+    header .navbar-nav .nav-link {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .search-form {
+        width: 180px;
+    }
+    
+    .search-form:focus-within {
+        width: 220px;
+    }
+}
+
+/* Para orientación landscape en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .carousel-container {
+        aspect-ratio: 21/9;
+    }
+    
+    header .navbar {
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .tarjeta-producto {
+        max-width: 100%; /* En tablets se ajusta al ancho del contenedor */
+    }
+    
+    .imagen-producto {
+        height: 250px; /* Ajustamos la altura de la imagen */
+    }
+}
+
+@media (max-width: 576px) {
+    .tarjeta-producto {
+        max-width: 100%;
+        margin: 0.5rem auto;
+    }
+    
+    .imagen-producto {
+        height: 200px;
+    }
+    
+    .info-producto {
+        padding: 1rem;
+    }
+    
+    .titulo-producto {
+        font-size: 1.1rem;
+    }
+    
+    .precio-producto {
+        font-size: 1.2rem;
+    }
+    
+    .descripcion-producto {
+        font-size: 0.9rem;
+    }
+}
+

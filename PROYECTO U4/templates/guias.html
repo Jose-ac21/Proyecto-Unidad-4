@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamingZA Guías</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Ruta correcta para el CSS en Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='guias.css') }}">
+</head>
+<body>
+    <header class="gaming-header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand gaming-brand" href="#">GamingZA</a>
+
+                <div class="d-flex align-items-center order-lg-3">
+                    <div class="search-container">
+                        <form class="search-form" id="search-form">
+                            <input type="text" class="search-input" id="search-input" placeholder="Buscar">
+                            <button type="submit" class="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse order-lg-2" id="navbarContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('index') }}">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('reviews') }}">Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('noticias') }}">Noticias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link active" href="{{ url_for('guias') }}">Guías</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('tienda') }}">Merchandising</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('contactos') }}">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido de Guías -->
+    <main class="content">
+        <section class="guides">
+            <article class="guide">
+                <h2>Guía Pokemon Ruby Omega</h2>
+                <p>Pokémon Rubí Omega es una versión mejorada de Pokémon Rubí, con gráficos modernizados y nuevas características.
+                   Para comenzar, elige tu Pokémon inicial entre Treecko, Torchic o Mudkip, cada uno con sus propias fortalezas y debilidades.
+                   Explora la región de Hoenn, captura Pokémon y completa tu Pokédex mientras usas la PokéNav para encontrar eventos especiales y Pokémon raros.
+                   Prepárate para desafíos variados, como gimnasios de tipo agua, roca y eléctrico...</p>
+                <img src="{{ url_for('static', filename='img/pokemon ruby omega.jpg') }}" alt="Pokemon Ruby Omega">
+                <a href="#" class="gaming-btn">Leer más</a>
+            </article>
+
+            <article class="guide">
+                <h2>Guía de Elden Ring</h2>
+                <p>Elden Ring es un juego de rol de acción desarrollado por FromSoftware y publicado por Bandai Namco Entertainment. 
+                   Lanzado en febrero de 2022, combina elementos de los juegos Souls con un mundo abierto vasto y lleno de secretos.
+                   Aquí tienes una guía básica para ayudarte a comenzar y avanzar en el juego.</p>
+                <img src="{{ url_for('static', filename='img/Elden Ring guia.jpg') }}" alt="Elden Ring">
+                <a href="#" class="gaming-btn">Leer más</a>
+            </article>
+
+            <article class="guide">
+                <h2>Guía Valorant</h2>
+                <p>Mejorar el aim en Valorant es esencial para destacar en este juego de disparos táctico.
+                   Aquí tienes una guía práctica para perfeccionar tu puntería y aumentar tu efectividad en combate.</p>
+                <img src="{{ url_for('static', filename='img/guia valorant.jpg') }}" alt="Valorant">
+                <a href="#" class="gaming-btn">Leer más</a>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle con Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/buscador.js') }}"></script>
+</body>
+</html>

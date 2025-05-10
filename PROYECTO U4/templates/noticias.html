@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamingZA Noticias</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='noticias.css') }}">
+</head>
+<body>
+    <header class="gaming-header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand gaming-brand" href="#">GamingZA</a>
+
+                <div class="d-flex align-items-center order-lg-3">
+                    <div class="search-container">
+                        <form class="search-form">
+                            <input type="text" class="search-input" placeholder="Buscar...">
+                            <button type="submit" class="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse order-lg-2" id="navbarContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('index') }}">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('reviews') }}">Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link active" href="{{ url_for('noticias') }}">Noticias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('guias') }}">Guías</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('tienda') }}">Merchandising</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link gaming-link" href="{{ url_for('contactos') }}">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page-wrapper">
+        <main class="main-content">
+            <div class="section-title">
+                <h2>Entérate de lo que hizo la comunidad</h2>
+            </div>
+            <div class="news-container">
+                <a href="https://vandal.elespanol.com/noticia/1350778459/prime-gaming-regala-7-nuevos-juegos-gratis-para-pc-hoy-mismo-incluyendo-deus-ex-human-revolution/" class="news-card" target="_blank">
+                    <img src="{{ url_for('static', filename='img/Prime Video.jpg') }}" alt="Prime Video" class="news-image">
+                    <div class="news-content">
+                        <h2 class="news-title">Prime Video Regala estos 5 juegos</h2>
+                        <p class="news-excerpt">Ya disponibles los nuevos juegos de Prime Video listos para reclamar.</p>
+                        <p class="news-date">February 27, 2025</p>
+                    </div>
+                </a>
+
+                <a href="https://vandal.elespanol.com/noticia/1350778422/anunciados-los-juegos-de-marzo-de-ps-plus-essential-incluyendo-dragon-age-the-veilguard-para-ps5/" class="news-card" target="_blank">
+                    <img src="{{ url_for('static', filename='img/PlayStation Plus.jpg') }}" alt="PlayStation News" class="news-image">
+                    <div class="news-content">
+                        <h2 class="news-title">Juegos que nos trae el PS Plus</h2>
+                        <p class="news-excerpt">Estos son los juegos que llegarán el mes de marzo a PlayStation Plus.</p>
+                        <p class="news-date">February 27, 2025</p>
+                    </div>
+                </a>
+
+                <a href="https://vandal.elespanol.com/noticia/1350778428/el-dlc-de-dragon-ball-daima-para-dragon-ball-z-kakarot-ya-tiene-fecha-y-precio-y-se-lanzara-en-dos-partes/" class="news-card" target="_blank">
+                    <img src="{{ url_for('static', filename='img/Dragon Ball Daima.jpg') }}" alt="DBZ Kakarot News" class="news-image">
+                    <div class="news-content">
+                        <h2 class="news-title">Dragon Ball Daima llegará como DLC</h2>
+                        <p class="news-excerpt">El nuevo DLC de Dragon Ball Daima estará disponible en Dragon Ball Z Kakarot.</p>
+                        <p class="news-date">February 27, 2025</p>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=60Z8jjN29JQ" class="news-card" target="_blank">
+                    <img src="{{ url_for('static', filename='img/Silent Hill 2.jpg') }}" alt="Silent Hill 2 Remake" class="news-image">
+                    <div class="news-content">
+                        <h2 class="news-title">30 Curiosidades de Silent Hill 2 Remake</h2>
+                        <p class="news-excerpt">Las 30 curiosidades más interesantes del remake de SH2.</p>
+                        <p class="news-date">February 27, 2025</p>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=p800ydf4HYM" class="news-card" target="_blank">
+                    <img src="{{ url_for('static', filename='img/Monster-Hunter-Wilds-arte-1620x800.jpg') }}" alt="Monster Hunter Wilds" class="news-image">
+                    <div class="news-content">
+                        <h2 class="news-title">Monster Hunter Wilds: Ideal para debutar en la saga</h2>
+                        <p class="news-excerpt">¿Estás listo para iniciar en Monster Hunter? Este análisis te interesa.</p>
+                        <p class="news-date">February 27, 2025</p>
+                    </div>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 GamingZA - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle con Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
